@@ -8,4 +8,4 @@
 
 # To-Do
 ### MESA Documentation
-### BattleCode 2024 Documentations
+### BattleCode 2024 Documentation
