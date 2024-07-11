@@ -11,33 +11,29 @@ Agents File
 # Importing dependencies
 import mesa
 
-
 # Citizen Class
 class Citizen(mesa.Agent):
-    def __init__(self,unique_id):
-        super.__init__()
-        pass
+    def __init__(self,citizen_id, model):
+        super().__init__(citizen_id, model)
+        print("Hello, I am Citizen:",citizen_id)
+
     def step():
         pass
 
 # Militant Class 
 class Militant(mesa.Agent):
-    def __init__(self):
-        pass
+    def __init__(self, militant_id, model):
+        super().__init__(militant_id,model)
+        print("Hello, I am Militant:",militant_id)
 
     def step():
         pass
 
 # Military Squad
 class MilitarySquad(mesa.Agent):
-    def __int__(self):
-        pass
+    def __int__(self, military_id, model):
+        super().__init__(military_id, model)
+        print("Hello, We are Military Squad:", military_id)
 
     def step():
         pass
-
-
-
-        
-
-

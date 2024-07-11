@@ -10,10 +10,9 @@ Parameters File
 # Grid Size
 Grid_Size = 0 
 
-# Militants
-No_of_Militants = 10
+# Define numeric values of Citizens, Militants, MilitarySquad
+No_of_Citizens = 5
+No_of_Militants = 5
+No_of_MilitarySquad = 7
 
 # Military Squads
-
-
-
