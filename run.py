@@ -7,7 +7,11 @@ Mac OSX
 Lethal Theory
 Run File
 """
-import model
+from model import Model
 import parameters as p
 
-main_instance = model.Model(p.No_of_Citizens,p.No_of_Militants,p.No_of_MilitarySquad)
+main_instance = Model(p.No_of_Citizens,p.No_of_Militants,p.No_of_MilitarySquad)
+
+for i in range(10):
+    main_instance.step()
+
