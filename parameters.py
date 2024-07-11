@@ -7,12 +7,15 @@ Mac OSX
 Lethal Theory
 Parameters File
 """
+# Importing Dependencies
+import random
+
 # Grid Size
-grid_x = 50
-grid_y = 50 
+grid_x = 20
+grid_y = 20 
 
 # Define numeric values of Citizens, Militants, MilitarySquad
-No_of_Citizens = 3
+No_of_Citizens = random.randint(10,15)
 No_of_Militants = 9
 No_of_MilitarySquad = 2
 

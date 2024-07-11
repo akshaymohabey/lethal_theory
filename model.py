@@ -9,11 +9,13 @@ Model File
 """
 # Importing Dependencies
 import mesa
+import parameters as p
 import networkx as nx
 import agents
 import copy
+import random
 
-class Model(mesa.Model):
+class LethalModel(mesa.Model):
 
     def __init__(self, citizens,militants,military_squad):
         super().__init__()
@@ -25,16 +27,27 @@ class Model(mesa.Model):
         self.militants_list = []
         self.military_squads_list = []
 
+        # Add grid
+        self.grid = mesa.space.MultiGrid(p.grid_x,p.grid_y,False)
+
         # Create scheduler and assign it to Model
         self.schedule = mesa.time.RandomActivation(self)
+        self.running = True
 
         # Creating Citizens
         for i in range(self.num_of_citizens):
             x = agents.Citizen(i,self)  
+
             # Print Agent Type
             print(type(x))
             self.schedule.add(x)
             self.citizens_list.append(x)
+
+            # Addding Citizens/Family to a random cell
+            coord_x = self.random.randrange(self.grid.width)  
+            coord_y = self.random.randrange(self.grid.height)
+            self.grid.place_agent(x,(coord_x,coord_y))
+
         
         # Creating Militants
         for j in range(self.num_of_militants):
@@ -43,6 +56,12 @@ class Model(mesa.Model):
             print(type(y))
             self.schedule.add(y)
             self.militants_list.append(y)
+
+            # Addding Militans to a random cell
+            coord_x = self.random.randrange(self.grid.width)  
+            coord_y = self.random.randrange(self.grid.height)
+            self.grid.place_agent(x,(coord_x,coord_y))
+
         
         # Creating Military Squad
         for k in range(self.num_of_msquad):
@@ -52,16 +71,13 @@ class Model(mesa.Model):
             self.schedule.add(z)
             self.military_squads_list.append(z)
 
-        # Adding agents to the schedule 
-        # Adding Citizens
-        """
-        for i in range(len(self.citizens_list)):
-            self.schedule.add(self.schedule[i])
-            print("Agent added to the schedule: ",self.citizens_list[i])
-        """
-
+            self.datacollector = mesa.DataCollector(
+            model_reporters={"Citizens": "num_of_agents"},
+            agent_reporters={"Money": "money"},
+            )
 
     def step(self):
+        self.datacollector.collect(self)
         self.schedule.step()
 
     # Setter and getter functions
