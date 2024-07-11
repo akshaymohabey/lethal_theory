@@ -14,11 +14,9 @@ import mesa
 # Citizen Class
 class Citizen(mesa.Agent):
     def __init__(self,citizen_id,model):
-        super().__init__(citizen_id, model)
+        super().__init__(citizen_id,model)
         print("Hello, I am Citizen:",citizen_id)
 
-    # def step():
-    #     pass
 
 # Militant Class 
 class Militant(mesa.Agent):
@@ -26,14 +24,8 @@ class Militant(mesa.Agent):
         super().__init__(militant_id,model)
         print("Hello, I am Militant:",militant_id)
 
-    # def step():
-        # pass
-
 # Military Squad
-class MilitarySquad(mesa.Agent):
-    def __int__(self,military_id,model):
-        super().__init__(military_id, model)
-        print("Hello, We are Military Squad:", military_id)
-
-    # def step():
-    #     pass
+class MSquad(mesa.Agent):
+    def __init__(self,msquad_id,model):
+        super().__init__(msquad_id,model)
+        print('Hello! this is the Military Squad',msquad_id)

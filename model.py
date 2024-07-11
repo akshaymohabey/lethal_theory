@@ -35,13 +35,17 @@ class Model(mesa.Model):
             self.militants_list.append(y)
         
         # Creating Military Squad
-        for k in range(5):
-            z = agents.MilitarySquad(k,self)
+        print("No. of Military Squad is:",self.num_of_msquad)
+        for k in range(self.num_of_msquad):
+            z = agents.MSquad(k,self)
             self.military_squads_list.append(z)
 
     # Setter and getter functions
     def get_citizens_list(self):
         return self.citizens_list
+    
+    def get_msquad_list(self):
+        return self.military_squads_list
         
 
 
