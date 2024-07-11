@@ -8,11 +8,12 @@ Lethal Theory
 Parameters File
 """
 # Grid Size
-Grid_Size = 0 
+grid_x = 50
+grid_y = 50 
 
 # Define numeric values of Citizens, Militants, MilitarySquad
-No_of_Citizens = 4
-No_of_Militants = 5
-No_of_MilitarySquad = 3
+No_of_Citizens = 3
+No_of_Militants = 9
+No_of_MilitarySquad = 2
 
 # Military Squads

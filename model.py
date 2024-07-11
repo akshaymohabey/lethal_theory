@@ -7,10 +7,11 @@ Mac OSX
 Lethal Theory
 Model File
 """
-
+# Importing Dependencies
 import mesa
-import networkx
+import networkx as nx
 import agents
+import copy
 
 class Model(mesa.Model):
 

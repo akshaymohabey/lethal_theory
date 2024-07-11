@@ -10,6 +10,8 @@ Agents File
 
 # Importing dependencies
 import mesa
+import random
+import networkx as nx
 
 # Citizen Class
 class Citizen(mesa.Agent):
@@ -20,6 +22,9 @@ class Citizen(mesa.Agent):
     
     def step(self):
         self.money += 1
+
+    def send_money(self):
+        return self.money
 
 
 # Militant Class 
