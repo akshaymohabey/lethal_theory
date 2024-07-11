@@ -1,6 +1,6 @@
 """
 Akshay Mohabey
-Python3
+Python 3.12.4
 Mac OSX
 11 July 2024
 
@@ -9,7 +9,8 @@ Model File
 """
 
 import mesa
-import agents as ags
+import networkx
+from agents import Citizen, Militant, MilitarySquad
 
 
 class Model(mesa.Model):
