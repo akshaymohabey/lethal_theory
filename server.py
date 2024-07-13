@@ -5,13 +5,11 @@ Mac OSX
 11 July 2024
 
 Lethal Theory
-Sever File
+Sever/Vizualization File
 """ 
 # Importing Dependencies
 import mesa
 from agents import Citizen, Militant
-from mesa_models import boltzmann_wealth_model
-from mesa.experimental import JupyterViz
 
 def agent_portrayal(agent):
     return {
