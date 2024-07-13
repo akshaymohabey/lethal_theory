@@ -43,10 +43,10 @@ class LethalModel(mesa.Model):
             self.schedule.add(x)
             self.citizens_list.append(x)
 
-            # Addding Citizens/Family to a random cell
-            coord_x = self.random.randrange(self.grid.width)  
-            coord_y = self.random.randrange(self.grid.height)
-            self.grid.place_agent(x,(coord_x,coord_y))
+            # # Addding Citizens/Family to a random cell
+            # coord_x = self.random.randrange(self.grid.width)  
+            # coord_y = self.random.randrange(self.grid.height)
+            # self.grid.place_agent(x,(coord_x,coord_y))
 
         
         # Creating Militants
@@ -57,10 +57,10 @@ class LethalModel(mesa.Model):
             self.schedule.add(y)
             self.militants_list.append(y)
 
-            # Addding Militans to a random cell
-            coord_x = self.random.randrange(self.grid.width)  
-            coord_y = self.random.randrange(self.grid.height)
-            self.grid.place_agent(x,(coord_x,coord_y))
+            # # Addding Militans to a random cell
+            # coord_x = self.random.randrange(self.grid.width)  
+            # coord_y = self.random.randrange(self.grid.height)
+            # self.grid.place_agent(x,(coord_x,coord_y))
 
         
         # Creating Military Squad

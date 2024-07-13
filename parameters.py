@@ -11,8 +11,8 @@ Parameters File
 import random
 
 # Grid Size
-grid_x = 20
-grid_y = 20 
+grid_x = 10
+grid_y = 10 
 
 # Define numeric values of Citizens, Militants, MilitarySquad
 No_of_Citizens = random.randint(10,15)

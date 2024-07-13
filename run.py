@@ -8,8 +8,8 @@ Lethal Theory
 Run File
 """
 # Importing Dependencies
-import mesa
 from model import LethalModel
+import mesa
 import parameters as p
 import matplotlib.pyplot as plt
 import random
@@ -20,6 +20,7 @@ import pandas as pd
 
 # Calling model class
 main_instance = LethalModel(p.No_of_Citizens,p.No_of_Militants,p.No_of_MilitarySquad)
+
 
 agent_counts = np.zeros((main_instance.grid.width, main_instance.grid.height))
 for cell_content, (x, y) in main_instance.grid.coord_iter():
@@ -33,6 +34,7 @@ g = sns.heatmap(agent_counts, cmap="viridis", annot=True, cbar=False, square=Tru
 g.figure.set_size_inches(4, 4)
 g.set(title="Number of agents on each cell of the grid");
 plt.show()
+
 
 # Batch Run
 # params = {"citizens": p.No_of_Citizens, 
