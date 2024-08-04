@@ -21,7 +21,6 @@ import pandas as pd
 # Calling model class
 main_instance = LethalModel(p.No_of_Citizens,p.No_of_Militants,p.No_of_MilitarySquad)
 
-
 agent_counts = np.zeros((main_instance.grid.width, main_instance.grid.height))
 for cell_content, (x, y) in main_instance.grid.coord_iter():
     agent_count = len(cell_content)

@@ -36,26 +36,10 @@ class LethalModel(mesa.Model):
 
         # Creating Citizens
         for i in range(self.num_of_citizens):
-            x = agents.Citizen(i,self)  
-
-            # Print Agent Type
-            print(type(x))
+            x = agents.Citizen(LethalModel.next_id(self),self)  
+            # Adding agent to the schedule
             self.schedule.add(x)
             self.citizens_list.append(x)
-
-            # Addding Citizens/Family to a random cell
-            coord_x = self.random.randrange(self.grid.width)  
-            coord_y = self.random.randrange(self.grid.height)
-            self.grid.place_agent(x,(coord_x,coord_y))
-
-        
-        # Creating Militants
-        for j in range(self.num_of_militants):
-            y = agents.Militant(j,self)
-            # Print Agent Type
-            print(type(y))
-            self.schedule.add(y)
-            self.militants_list.append(y)
 
             # Addding Militans to a random cell
             coord_x = self.random.randrange(self.grid.width)  
@@ -63,18 +47,37 @@ class LethalModel(mesa.Model):
             self.grid.place_agent(x,(coord_x,coord_y))
 
         
+        # Creating Militants
+        for j in range(self.num_of_militants):
+            y = agents.Militant(LethalModel.next_id(self),self)
+
+            # Adding militants to te schedule 
+            self.schedule.add(y)
+            self.militants_list.append(y)
+
+            # Addding Militans to a random cell
+            coord_x = self.random.randrange(self.grid.width)  
+            coord_y = self.random.randrange(self.grid.height)
+            self.grid.place_agent(y,(coord_x,coord_y))
+
+        
         # Creating Military Squad
         for k in range(self.num_of_msquad):
-            z = agents.MSquad(k,self)
-            # Print Agent Type
-            print(type(z))
+            z = agents.MSquad(LethalModel.next_id(self),self)
+
+            #Adding Military Squad to the schedule
             self.schedule.add(z)
             self.military_squads_list.append(z)
 
-            self.datacollector = mesa.DataCollector(
-            model_reporters={"Citizens": "num_of_agents"},
-            agent_reporters={"Money": "money"},
-            )
+            # Addding Militans to a random cell
+            coord_x = self.random.randrange(self.grid.width)  
+            coord_y = self.random.randrange(self.grid.height)
+            self.grid.place_agent(z,(coord_x,coord_y))
+
+        self.datacollector = mesa.DataCollector(
+        model_reporters={"Citizens": "num_of_agents"},
+        agent_reporters={"Money": "money"},
+        )
 
     def step(self):
         self.datacollector.collect(self)
@@ -83,6 +86,9 @@ class LethalModel(mesa.Model):
     # Setter and getter functions
     def get_citizens_list(self):
         return self.citizens_list
+    
+    def get_militatnts_list(self):
+        return self.militants_list
     
     def get_msquad_list(self):
         return self.military_squads_list
