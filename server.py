@@ -47,14 +47,14 @@ grid = CanvasGrid(
   500,
   500)
 
-# chart = ChartModule([{
-#   'Label': 'Gini',
-#   'Color': 'Black'}],
-#   data_collector_name='datacollector')
+chart = ChartModule(
+  [{'Label': "citizens",'Color': '#3b7a57'},{'Label': "militants",'Color': '#cc5500'},{'Label': "msqad",'Color': '#fff600'}],
+  data_collector_name='datacollector'
+  )
 
 server = ModularServer(
   LethalModel,
-  [grid],
+  [grid, chart],
   "Money Model",
   {"citizens":p.No_of_Citizens, "militants":p.No_of_Militants, "military_squad":p.No_of_MilitarySquad}
   )

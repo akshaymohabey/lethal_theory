@@ -15,6 +15,18 @@ import agents
 import copy
 import random
 
+def total_citizens(model):
+    x = random.randrange(35,100)
+    return x
+def total_militants(model):
+    x = random.randrange(35,100)
+    return x
+
+def total_msquad(model):
+    x = random.randrange(35,100)
+    return x
+
+# Model Class
 class LethalModel(mesa.Model):
 
     def __init__(self, citizens,militants,military_squad):
@@ -81,8 +93,7 @@ class LethalModel(mesa.Model):
             self.grid.place_agent(z,(coord_x,coord_y))
 
         self.datacollector = mesa.DataCollector(
-        model_reporters={"Citizens": "num_of_agents"},
-        agent_reporters={"Money": "money"},
+        model_reporters = {"citizens": total_citizens, "militants": total_militants, "msqad": total_msquad}
         )
 
     def step(self):
