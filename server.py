@@ -16,21 +16,27 @@ from mesa.visualization.modules import ChartModule
 from model import LethalModel
 import parameters as p
 
+
+# Color Scheme 2
+citizen_color = "#3b7a57"
+militant_color = "#cc5500"
+msquad_color = "#fff600"
+
 def agent_portrayal(agent):
     portrayal = {
       "Shape": "circle",
       "Filled": True}
     if agent.identity == '0':
-      portrayal["r"] = 0.60
-      portrayal["Color"] = "#a4c639" # Android Green
+      portrayal["r"] = 0.50
+      portrayal["Color"] = citizen_color
       portrayal["Layer"] = 0
     elif agent.identity == '1':
-      portrayal["r"] = 0.50
-      portrayal["Color"] = "#d3212d" # Amaranth Red
+      portrayal["r"] = 0.35
+      portrayal["Color"] = militant_color
       portrayal["Layer"] = 1
     else:
-      portrayal["r"] = 0.30
-      portrayal["Color"] = "#e9d66b" # Arylide Yellow
+      portrayal["r"] = 0.20
+      portrayal["Color"] = msquad_color
       portrayal["Layer"] = 2
     return portrayal
 

@@ -36,7 +36,7 @@ class Militant(mesa.Agent):
 class MSquad(mesa.Agent):
     def __init__(self,msquad_id,model):
         super().__init__(msquad_id,model)
-        print('Hello! this is the Military Squad',msquad_id)
+        # print('Hello! this is the Military Squad',msquad_id)
         self.identity = '2'
 
     

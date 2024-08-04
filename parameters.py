@@ -13,7 +13,7 @@ import mesa
 
 # Grid Size
 grid_x = 10
-grid_y = 10 
+grid_y = 10
 
 # Define numeric values of Citizens, Militants, MilitarySquad
 No_of_Citizens = random.randint(12,29)

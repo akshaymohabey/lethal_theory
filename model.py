@@ -34,17 +34,23 @@ class LethalModel(mesa.Model):
         self.schedule = mesa.time.RandomActivation(self)
         self.running = True
 
-        # Creating Citizens
+        """ 
+        Creating Citizens
+        """
         for i in range(self.num_of_citizens):
             x = agents.Citizen(LethalModel.next_id(self),self)  
             # Adding agent to the schedule
             self.schedule.add(x)
             self.citizens_list.append(x)
 
+        # Adding    
+        ctz = 0 
+        for column in range(p.grid_x):
+            for row in range(p.grid_y):
             # Addding Militans to a random cell
-            coord_x = self.random.randrange(self.grid.width)  
-            coord_y = self.random.randrange(self.grid.height)
-            self.grid.place_agent(x,(coord_x,coord_y))
+                coord_x = column
+                coord_y = row
+                self.grid.place_agent(self.citizens_list[ctz],(coord_x,coord_y))
 
         
         # Creating Militants
