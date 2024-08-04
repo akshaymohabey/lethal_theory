@@ -44,8 +44,8 @@ grid = CanvasGrid(
   agent_portrayal,
   p.grid_x,
   p.grid_y,
-  600,
-  600)
+  500,
+  500)
 
 # chart = ChartModule([{
 #   'Label': 'Gini',
