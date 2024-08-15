@@ -63,6 +63,7 @@ class LethalModel(mesa.Model):
                 coord_x = column
                 coord_y = row
                 self.grid.place_agent(self.citizens_list[ctz],(coord_x,coord_y))
+                ctz += 1
 
         
         # Creating Militants

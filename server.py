@@ -11,6 +11,7 @@ Sever/Vizualization File
 from mesa.visualization.modules import CanvasGrid
 from mesa.visualization.ModularVisualization import ModularServer
 from mesa.visualization.modules import ChartModule
+from mesa.visualization.UserParam import Slider
 
 #Import model
 from model import LethalModel
@@ -52,11 +53,17 @@ chart = ChartModule(
   data_collector_name='datacollector'
   )
 
+# Generating Slider
+militants_slider = Slider("Number of Militants", value=20, min_value=12, max_value=30, step=1)
+msquad_slider = Slider("Number of Militants", value=20, min_value=12, max_value=30, step=1)
+
 server = ModularServer(
   LethalModel,
   [grid, chart],
-  "Money Model",
-  {"citizens":p.No_of_Citizens, "militants":p.No_of_Militants, "military_squad":p.No_of_MilitarySquad}
+  "Lethal Theory",
+  {"citizens":p.No_of_Citizens,
+   "militants": militants_slider, 
+   "military_squad":msquad_slider}
   )
 server.port = 8521 # Any non-80 port to appease replit
 server.launch()
